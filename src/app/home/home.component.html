@@ -1,0 +1,24 @@
+<div fxLayout="row" fxLayout.xs="column">
+  <div fxFlex="50" fxFlex.xs="100" class="mr-2 mb-2">
+    <app-chart-card [title]="'Vendas semestrais'" [subtitle]="'Vendas por semestre'" [chartType]="doughnutChartType" [chartData]="doughnutChartData"
+      [chartOptions]="doughnutChartOptions">
+    </app-chart-card>
+  </div>
+  <div fxFlex="50" fxFlex.xs="100" class="mb-2">
+    <app-chart-card [title]="'Vendas categorizadas'" [subtitle]="'Vendas por categoria'" [chartType]="pieChartType" [chartData]="pieChartData"
+      [chartOptions]="pieChartOptions">
+    </app-chart-card>
+  </div>
+</div>
+<div fxLayout="row" fxLayout.xs="column">
+  <div fxFlex="50" fxFlex.xs="100" class="mr-2 mb-2">
+    <app-chart-card [title]="'Vendas mensais'" [subtitle]="'Vendas por mês'" [chartType]="barChartType" [chartData]="barChartData"
+      [chartOptions]="barChartOptions">
+    </app-chart-card>
+  </div>
+  <div fxFlex="50" fxFlex.xs="100" class="mb-2">
+    <app-chart-card [title]="'Vendas último semestre'" [subtitle]="'Número de vendas dos últimos 6 meses'" [chartType]="lineChartType"
+      [chartData]="lineChartData" [chartOptions]="pieChartOptions">
+    </app-chart-card>
+  </div>
+</div>
