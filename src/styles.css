@@ -1,15 +1,46 @@
 @import "~@angular/material/prebuilt-themes/purple-green.css";
+/*@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";*/
+
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0 auto;
 }
 
+/* scroll style */
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 .main-content {
-  margin: 10px 10px;
+  margin: 15px;
 }
 
 .primary {
   background-color: #7b1fa2;
+}
+
+.space-group {
+  margin-bottom: 0.5rem !important;
+  margin-right: 0.5rem !important;
 }
 
 .m-0 {

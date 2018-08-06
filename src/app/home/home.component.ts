@@ -92,6 +92,7 @@ export class HomeComponent implements OnInit {
           fontColor: '#fff'
         }
       },
+      maintainAspectRatio: false,
       scales: {
         yAxes: [{
           ticks: {
