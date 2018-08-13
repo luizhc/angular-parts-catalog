@@ -52,12 +52,7 @@ export class HomeComponent implements OnInit {
       ]
     };
     this.pieChartOptions = {
-      maintainAspectRatio: false,
-      legend: {
-        labels: {
-          fontColor: '#fff'
-        }
-      }
+      maintainAspectRatio: false
     };
 
     this.lineChartType = ChartType.Line;
@@ -87,11 +82,6 @@ export class HomeComponent implements OnInit {
       }]
     };
     this.barChartOptions = {
-      legend: {
-        labels: {
-          fontColor: '#fff'
-        }
-      },
       maintainAspectRatio: false,
       scales: {
         yAxes: [{
@@ -116,12 +106,7 @@ export class HomeComponent implements OnInit {
       ]
     };
     this.doughnutChartOptions = {
-      maintainAspectRatio: false,
-      legend: {
-        labels: {
-          fontColor: '#fff'
-        }
-      }
+      maintainAspectRatio: false
     };
   }
 }

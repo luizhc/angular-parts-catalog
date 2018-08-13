@@ -1,7 +1,7 @@
-@import "~@angular/material/prebuilt-themes/purple-green.css";
-/*@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+/*@import "~@angular/material/prebuilt-themes/purple-green.css";*/
+/*@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";*/
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";*/
+/*@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";*/
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -35,12 +35,16 @@ body {
 }
 
 .primary {
-  background-color: #7b1fa2;
+  background: #3f51b5;
 }
 
 .space-group {
   margin-bottom: 0.5rem !important;
   margin-right: 0.5rem !important;
+}
+
+.mat-card-header-text {
+  margin: 0 !important;
 }
 
 .m-0 {

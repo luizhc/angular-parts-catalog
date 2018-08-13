@@ -1,4 +1,3 @@
-import { MenuComponent } from './menu/menu.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -10,14 +9,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { MenuComponent } from './menu/menu.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 
-import { HomeComponent } from './home/home.component';
 import { SharedModule } from './shared/shared.module';
+import { UsersFormModule } from './users-form/users-form.module';
+import { PartsFormModule } from './parts-form/parts-form.module';
 import { ChartCardModule } from './chart-card/chart-card.module';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+
+export const firebaseConfig = environment.firebaseConfig;
 
 @NgModule({
   declarations: [
@@ -35,6 +42,10 @@ import { ChartCardModule } from './chart-card/chart-card.module';
     AppRoutingModule,
     SharedModule,
     ChartCardModule,
+    PartsFormModule,
+    UsersFormModule,
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [AuthService, AuthGuard],

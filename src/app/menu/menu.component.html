@@ -49,7 +49,7 @@
     </div>
     <div class="mt-3">
       <mat-nav-list>
-        <a mat-list-item class="ml-2" style="font-size:15px;">
+        <a mat-list-item class="ml-2" style="font-size:15px;" routerLink="/">
           Dashboard
         </a>
       </mat-nav-list>
@@ -61,13 +61,13 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
           <mat-nav-list class="ml-0" dense>
-            <mat-list-item>
-              <a href="#">Clientes</a>
+            <mat-list-item routerLink="/clients-form" [routerLinkActive]="['active-route']">
+              <a>Clientes</a>
             </mat-list-item>
           </mat-nav-list>
           <mat-nav-list class="ml-0" dense>
-            <mat-list-item>
-              <a href="#">Usuários</a>
+            <mat-list-item routerLink="/users-form" [routerLinkActive]="['active-route']">
+              <a>Usuários</a>
             </mat-list-item>
           </mat-nav-list>
         </mat-expansion-panel>
@@ -78,17 +78,14 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
           <mat-nav-list class="ml-0" dense>
-            <mat-list-item>
-              <a href="#">Cadastrar Produtos</a>
+            <mat-list-item routerLink="/parts-form" [routerLinkActive]="['active-route']">
+              <a>Cadastrar Produtos</a>
             </mat-list-item>
-            <mat-list-item>
-              <a href="#">Listar Produtos</a>
+            <mat-list-item routerLink="/parts-list" [routerLinkActive]="['active-route']">
+              <a>Listar Produtos</a>
             </mat-list-item>
-            <mat-list-item>
-              <a href="#">Grupos de Produtos</a>
-            </mat-list-item>
-            <mat-list-item>
-              <a href="#">Unidades de Produtos</a>
+            <mat-list-item routerLink="/group-parts-form" [routerLinkActive]="['active-route']">
+              <a>Grupos de Produtos</a>
             </mat-list-item>
           </mat-nav-list>
         </mat-expansion-panel>
@@ -99,17 +96,11 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
           <mat-nav-list class="ml-0" dense>
-            <mat-list-item>
-              <a href="#">Produtos</a>
+            <mat-list-item routerLink="/order-parts">
+              <a [routerLinkActive]="['active-route']">Produtos</a>
             </mat-list-item>
-            <mat-list-item>
-              <a href="#">Serviços</a>
-            </mat-list-item>
-            <mat-list-item>
-              <a href="#">Grupos de Produtos</a>
-            </mat-list-item>
-            <mat-list-item>
-              <a href="#">Unidades de Produtos</a>
+            <mat-list-item routerLink="/order-services">
+              <a [routerLinkActive]="['active-route']">Serviços</a>
             </mat-list-item>
           </mat-nav-list>
         </mat-expansion-panel>
