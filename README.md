@@ -1,6 +1,6 @@
 # Catalogo de Peças
 
-Catálogo de peças em Angular utilizando o [Material Design](https://github.com/angular/material).
+Catálogo de peças em Angular utilizando o [Material Design](https://github.com/angular/material2).
 
 ## Development server
 

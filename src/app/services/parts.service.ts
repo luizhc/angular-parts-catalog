@@ -1,25 +1,22 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Modelos } from '../parts-form/parts-form.component';
-import { Fabricantes } from './../parts-form/parts-form.component';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
+import { Group } from '../parts-form/parts-form.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PartsService {
-  private _urlModelos = 'assets/json/modelos-carros.json';
-  private _urlFabricantes = 'assets/json/fabricantes-carros.json';
-
   partsCollection: AngularFirestoreCollection<any>;
-  noteDocument:   AngularFirestoreDocument<any>;
+  groupsCollection: AngularFirestoreCollection<Group>;
 
-  constructor(private afs: AngularFirestore, private _httpClient: HttpClient) {
+  constructor(private afs: AngularFirestore) {
     this.partsCollection = this.afs.collection('parts', (ref) => ref.orderBy('time', 'desc').limit(5));
+
+    this.groupsCollection = this.afs.collection('groups', (ref) => ref.orderBy('time', 'desc').limit(5));
   }
 
   getData(): Observable<any[]> {
@@ -34,16 +31,19 @@ export class PartsService {
     );
   }
 
-  getModelos() {
-    return this._httpClient.get<Modelos[]>(this._urlModelos);
-  }
-
-  getFabricantes() {
-    return this._httpClient.get<Fabricantes[]>(this._urlFabricantes);
-  }
-
   getPart(id: string) {
     return this.afs.doc<any>(`parts/${id}`);
+  }
+
+  getGroups(): Observable<Group[]> {
+    return this.groupsCollection.snapshotChanges().pipe(
+      map((actions) => {
+        return actions.map((a) => {
+          const data = a.payload.doc.data();
+          return { id: a.payload.doc.id, ...data };
+        });
+      })
+    );
   }
 
   createPart(content: string) {

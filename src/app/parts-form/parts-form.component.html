@@ -27,10 +27,9 @@
       <div fxFlex="50" fxFlex.xs="100" class="form-container">
         <mat-form-field>
           <mat-select placeholder="Aplicação" formControlName="aplication">
-            <mat-option value="Forro da Porta">Forro da Porta</mat-option>
-            <mat-option value="Forro da Porta">Forro da Porta</mat-option>
-            <mat-option value="Forro da Porta">Forro da Porta</mat-option>
-            <mat-option value="Forro da Porta">Forro da Porta</mat-option>
+            <mat-option *ngFor="let group of groups$ | async" [value]="group.id">
+              {{ group.nome }}
+            </mat-option>
           </mat-select>
         </mat-form-field>
       </div>
