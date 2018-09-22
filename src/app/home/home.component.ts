@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { ChartType } from '../chart-card/chart-card/chart-card.component';
+import { ChartType } from '../chart-card/chart-card.component';
 
 @Component({
   selector: 'app-home',

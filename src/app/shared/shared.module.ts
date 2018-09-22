@@ -1,12 +1,26 @@
 import { NgModule } from '@angular/core';
+
 import {
-  MatButtonModule, MatCheckboxModule,
-  MatIconModule, MatMenuModule, MatSidenavModule,
-  MatExpansionModule, MatListModule, MatSelectModule, MatFormFieldModule, MatInputModule
+  MatButtonModule,
+  MatCheckboxModule,
+  MatIconModule,
+  MatMenuModule,
+  MatSidenavModule,
+  MatExpansionModule,
+  MatListModule,
+  MatSelectModule,
+  MatFormFieldModule,
+  MatInputModule
 } from '@angular/material';
-import { MatToolbarModule } from '@angular/material/toolbar';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   exports: [
@@ -22,7 +36,12 @@ import { MatCardModule } from '@angular/material/card';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatTooltipModule,
+    MatSortModule,
+    MatDialogModule
   ],
 })
 export class SharedModule { }
