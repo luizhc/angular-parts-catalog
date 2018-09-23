@@ -1745,3 +1745,17 @@ table {
 .margin-card-crud {
   margin-top: 25px;
 }
+
+.padding-card-crud {
+  padding: 25px;
+}
+
+.mat-list-item {
+  margin-left: 20px;
+}
+
+.active-route {
+  background-color: #ff4081 !important;
+  color: #fff !important;
+  margin-right: 10px;
+}

@@ -11,6 +11,7 @@ import { UsersFormComponent } from 'src/app/users-form/users-form.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'dashboard', component: HomeComponent },
   { path: 'parts-form', component: PartsFormComponent },
   { path: 'users-form', component: UsersFormComponent },
   { path: 'customers', component: CustomerComponent },

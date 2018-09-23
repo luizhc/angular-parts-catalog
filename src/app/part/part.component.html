@@ -1,29 +1,35 @@
 <mat-card class="mat-shadow margin-card-crud">
 
-  <!-- header -->
-  <mat-card-header>
-    <mat-card-title>
-      <h1>{{ title }}</h1>
-    </mat-card-title>
-    <mat-card-title>{{ subtitle }}</mat-card-title>
-  </mat-card-header>
+  <div class="mat-shadow padding-card-crud">
 
-  <!-- form -->
-  <form [formGroup]="form" fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutGap="10px grid">
-    <!-- <div fxFlex="30" fxFlex.xs="100" class="form-container">
+    <!-- header -->
+    <mat-card-header>
+      <mat-card-title>
+        <h1>{{ title }}</h1>
+      </mat-card-title>
+      <mat-card-title>{{ subtitle }}</mat-card-title>
+    </mat-card-header>
+
+    <!-- form -->
+    <form [formGroup]="form" fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutGap="10px grid">
+      <!-- <div fxFlex="30" fxFlex.xs="100" class="form-container">
       <mat-form-field>
         <input matInput placeholder="Código" formControlName="uid">
       </mat-form-field>
     </div> -->
-    <div fxFlex="50" fxFlex.xs="100" class="form-container">
-      <mat-form-field>
-        <input matInput placeholder="Nome" formControlName="name" #inputFocus>
-      </mat-form-field>
-    </div>
-    <div fxFlex="20" fxFlex.xs="100" class="form-container">
-      <button mat-raised-button (click)="save()" [disabled]="form.invalid" color="accent">{{ button }}</button>
-    </div>
-  </form>
+      <div fxFlex="50" fxFlex.xs="100" class="form-container">
+        <mat-form-field>
+          <input matInput placeholder="Nome" formControlName="name" #inputFocus>
+        </mat-form-field>
+      </div>
+      <div fxFlex="20" fxFlex.xs="100" class="form-container">
+        <button mat-raised-button (click)="save()" [disabled]="form.invalid" color="accent">{{ button }}</button>
+      </div>
+    </form>
+
+  </div>
+
+  <br>
 
   <div class="mat-shadow">
 
