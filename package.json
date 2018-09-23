@@ -25,6 +25,7 @@
     "@angular/pwa": "^0.7.2",
     "@angular/router": "^6.0.0",
     "@angular/service-worker": "^6.1.0",
+    "angular-input-masks": "^4.2.1",
     "angularfire2": "^5.0.0-rc.11",
     "chart.js": "^2.7.2",
     "core-js": "^2.5.4",

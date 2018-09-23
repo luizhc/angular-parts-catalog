@@ -1,31 +1,61 @@
-<mat-card class="mat-shadow">
+<mat-card class="mat-shadow margin-card-crud">
 
-  <!-- header -->
-  <mat-card-header>
-    <mat-card-title>
-      <h1>{{ title }}</h1>
-    </mat-card-title>
-    <mat-card-title>{{ subtitle }}</mat-card-title>
-  </mat-card-header>
+  <div class="mat-shadow padding-card-crud">
 
-  <!-- form -->
-  <form [formGroup]="form" fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutGap="10px grid">
-    <div fxFlex="30" fxFlex.xs="100" class="form-container">
+    <!-- header -->
+    <mat-card-header>
+      <mat-card-title>
+        <h1>{{ title }}</h1>
+      </mat-card-title>
+      <mat-card-title>{{ subtitle }}</mat-card-title>
+    </mat-card-header>
+
+    <!-- {{ form.value | json }} -->
+    <!-- form -->
+    <form [formGroup]="form" fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutGap="10px grid">
+      <!-- <div fxFlex="30" fxFlex.xs="100" class="form-container">
       <mat-form-field>
         <input matInput placeholder="Código" formControlName="uid">
       </mat-form-field>
-    </div>
-    <div fxFlex="50" fxFlex.xs="100" class="form-container">
-      <mat-form-field>
-        <input matInput placeholder="Nome" formControlName="name" #inputFocus>
-      </mat-form-field>
-    </div>
-    <div fxFlex="20" fxFlex.xs="100" class="form-container">
-      <button mat-raised-button (click)="save()" [disabled]="form.invalid" color="accent">{{ button }}</button>
-    </div>
-  </form>
+    </div> -->
+      <div fxFlex="70" fxFlex.xs="100" class="form-container">
+        <mat-form-field>
+          <input matInput placeholder="Nome" formControlName="name" #inputFocus>
+          <mat-error *ngIf="form.get('name').invalid">{{getErrorMessage('name', 'Nome')}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div fxFlex="30" fxFlex.xs="100" class="form-container">
+        <mat-form-field>
+          <input matInput placeholder="CPF" formControlName="cpf">
+          <mat-error *ngIf="form.get('cpf').invalid">{{getErrorMessage('cpf', 'CPF')}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div fxFlex="50" fxFlex.xs="100" class="form-container">
+        <mat-form-field>
+          <input matInput placeholder="E-mail" formControlName="email">
+          <mat-error *ngIf="form.get('email').invalid">{{getErrorMessage('email', 'E-mail')}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div fxFlex="50" fxFlex.xs="100" class="form-container">
+        <mat-form-field>
+          <input matInput placeholder="Telefone" formControlName="phone">
+        </mat-form-field>
+      </div>
+      <div fxFlex="80" fxFlex.xs="100" class="form-container">
+        <mat-form-field>
+          <input matInput placeholder="Endereço" formControlName="address">
+        </mat-form-field>
+      </div>
+      <div fxFlex="20" fxFlex.xs="100" class="form-container">
+        <button mat-raised-button (click)="save()" [disabled]="form.invalid" color="accent">{{ button }}</button>
+      </div>
+    </form>
 
-  <div class="mat-elevation-z8">
+  </div>
+
+  <br>
+
+  <div class="mat-shadow">
 
     <!-- filter -->
     <div fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutGap="10px grid">
@@ -44,13 +74,29 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
       <!-- columns -->
-      <ng-container matColumnDef="uid">
+      <!-- <ng-container matColumnDef="uid">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Código </th>
         <td mat-cell *matCellDef="let row"> {{row.uid}} </td>
-      </ng-container>
+      </ng-container> -->
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
         <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="cpf">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> CPF </th>
+        <td mat-cell *matCellDef="let row"> {{row.cpf}} </td>
+      </ng-container>
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> E-mail </th>
+        <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+      </ng-container>
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Telefone </th>
+        <td mat-cell *matCellDef="let row"> {{row.phone}} </td>
+      </ng-container>
+      <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Endereço </th>
+        <td mat-cell *matCellDef="let row"> {{row.address}} </td>
       </ng-container>
 
       <!-- actions buttons -->
@@ -68,8 +114,8 @@
 
     </table>
 
-    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
     <!-- paginator -->
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 
   </div>
 

@@ -49,7 +49,7 @@
     </div>
     <div class="mt-3">
       <mat-nav-list>
-        <a mat-list-item class="ml-2" style="font-size:15px;" routerLink="/">
+        <a mat-list-item class="ml-2" style="font-size:15px;" routerLink="/dashboard" [routerLinkActive]="['active-route']">
           Dashboard
         </a>
       </mat-nav-list>
@@ -61,15 +61,20 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
           <mat-nav-list class="ml-0" dense>
-            <mat-list-item routerLink="/customers" [routerLinkActive]="['active-route']" (click)="sidebarClose()">
+            <mat-list-item routerLink="/customers" [routerLinkActive]="['active-route']">
               <a>Clientes</a>
             </mat-list-item>
           </mat-nav-list>
           <mat-nav-list class="ml-0" dense>
-              <mat-list-item routerLink="/parts" [routerLinkActive]="['active-route']" (click)="sidebarClose()">
-                <a>Peças</a>
-              </mat-list-item>
-            </mat-nav-list>
+            <mat-list-item routerLink="/parts" [routerLinkActive]="['active-route']">
+              <a>Peças</a>
+            </mat-list-item>
+          </mat-nav-list>
+          <mat-nav-list class="ml-0" dense>
+            <mat-list-item routerLink="/manufacturers" [routerLinkActive]="['active-route']">
+              <a>Fabricantes</a>
+            </mat-list-item>
+          </mat-nav-list>
           <mat-nav-list class="ml-0" dense>
             <mat-list-item routerLink="/users-form" [routerLinkActive]="['active-route']">
               <a>Pedidos</a>
