@@ -1,3 +1,6 @@
+import { PartModule } from './part/part.module';
+import { ManufacturerModule } from './manufacturer/manufacturer.module';
+import { CustomerModule } from './customer/customer.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -23,6 +26,7 @@ import { ChartCardModule } from './chart-card/chart-card.module';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { RequestModule } from './request/resquest.module';
 
 export const firebaseConfig = environment.firebaseConfig;
 
@@ -44,6 +48,10 @@ export const firebaseConfig = environment.firebaseConfig;
     ChartCardModule,
     PartsFormModule,
     UsersFormModule,
+    CustomerModule,
+    PartModule,
+    RequestModule,
+    ManufacturerModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(firebaseConfig),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })

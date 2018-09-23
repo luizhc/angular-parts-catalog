@@ -29,6 +29,11 @@ export class MenuComponent implements OnInit {
     });
   }
 
+  sidebarClose() {
+    // document.body.classList.remove('nav-open');
+    // document.getElementById('toggle-button').classList.remove('toggled');
+}
+
   ngOnInit() {
   }
 

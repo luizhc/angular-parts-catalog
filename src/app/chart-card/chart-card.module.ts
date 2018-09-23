@@ -2,15 +2,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { MatCardModule } from '@angular/material/card';
-
-import { ChartCardComponent } from './chart-card/chart-card.component';
+import { ChartCardComponent } from './chart-card.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule,
-    MatCardModule
+    SharedModule,
+    RouterModule
   ],
   declarations: [
     ChartCardComponent

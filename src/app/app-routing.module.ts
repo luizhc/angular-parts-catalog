@@ -1,3 +1,5 @@
+import { PartComponent } from './part/part.component';
+import { CustomerComponent } from './customer/customer.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -10,6 +12,8 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'parts-form', component: PartsFormComponent },
   { path: 'users-form', component: UsersFormComponent },
+  { path: 'customers', component: CustomerComponent },
+  { path: 'parts', component: PartComponent },
   { path: '**', component: NotFoundComponent }
 ];
 
