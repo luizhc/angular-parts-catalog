@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="mat-shadow margin-card-crud">
 
   <!-- header -->
   <mat-card-header>
@@ -10,11 +10,11 @@
 
   <!-- form -->
   <form [formGroup]="form" fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutGap="10px grid">
-    <div fxFlex="30" fxFlex.xs="100" class="form-container">
+    <!-- <div fxFlex="30" fxFlex.xs="100" class="form-container">
       <mat-form-field>
         <input matInput placeholder="Código" formControlName="uid">
       </mat-form-field>
-    </div>
+    </div> -->
     <div fxFlex="50" fxFlex.xs="100" class="form-container">
       <mat-form-field>
         <input matInput placeholder="Nome" formControlName="name" #inputFocus>
@@ -25,7 +25,7 @@
     </div>
   </form>
 
-  <div class="mat-elevation-z8">
+  <div class="mat-shadow">
 
     <!-- filter -->
     <div fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutGap="10px grid">

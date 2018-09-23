@@ -1741,3 +1741,7 @@ table {
 .form-container > * {
   width: 100%;
 }
+
+.margin-card-crud {
+  margin-top: 25px;
+}

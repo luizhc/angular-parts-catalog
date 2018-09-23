@@ -1,3 +1,4 @@
+import { ManufacturerComponent } from './manufacturer/manufacturer.component';
 import { PartComponent } from './part/part.component';
 import { CustomerComponent } from './customer/customer.component';
 import { NgModule } from '@angular/core';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'users-form', component: UsersFormComponent },
   { path: 'customers', component: CustomerComponent },
   { path: 'parts', component: PartComponent },
+  { path: 'manufacturers', component: ManufacturerComponent },
   { path: '**', component: NotFoundComponent }
 ];
 

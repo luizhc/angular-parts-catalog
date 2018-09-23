@@ -16,13 +16,13 @@ import { PartService } from '../services/part.service';
 export class PartComponent implements OnInit {
 
   title = 'Peças';
-  subtitle = 'Cadastro de Peças';
+  subtitle = 'Gerenciar Peças';
   button = 'Adicionar';
   parts = new MatTableDataSource<Part>();
   form: FormGroup;
   part: Part;
 
-  displayedColumns: string[] = ['uid', 'name', 'actions'];
+  displayedColumns: string[] = ['name', 'actions'];
   columnsToDisplay: string[] = this.displayedColumns.slice();
   @ViewChild('inputFocus') focusIn: ElementRef;
   @ViewChild(MatPaginator) paginator: MatPaginator;
