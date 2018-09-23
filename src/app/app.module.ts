@@ -21,7 +21,7 @@ import { AuthGuard } from './guards/auth.guard';
 
 import { SharedModule } from './shared/shared.module';
 import { UsersFormModule } from './users-form/users-form.module';
-import { PartsFormModule } from './parts-form/parts-form.module';
+import { ProductModule } from './product/product.module';
 import { ChartCardModule } from './chart-card/chart-card.module';
 
 import { AngularFireModule } from 'angularfire2';
@@ -46,7 +46,7 @@ export const firebaseConfig = environment.firebaseConfig;
     AppRoutingModule,
     SharedModule,
     ChartCardModule,
-    PartsFormModule,
+    ProductModule,
     UsersFormModule,
     CustomerModule,
     PartModule,

@@ -1,0 +1,121 @@
+<div style="padding-bottom: 10px">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Produto</mat-card-title>
+      <mat-card-subtitle>Cadastro de produtos</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <pre>Values: {{productForm.value | json}}</pre>
+      <form novalidate [formGroup]="productForm" fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutGap="10px grid">
+        <div fxFlex="50" fxFlex.xs="100" class="form-container" formGroupName="manufacturer">
+          <mat-form-field>
+            <mat-select placeholder="Fabricantes" formControlName="id" (selectionChange)="getModelos($event.value)">
+              <mat-option *ngFor="let fabricante of fabricantes$ | async" [value]="fabricante.id">
+                {{ fabricante.nome }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div fxFlex="50" fxFlex.xs="100" class="form-container" formGroupName="brand">
+          <mat-form-field>
+            <mat-select placeholder="Modelos" formControlName="id">
+              <mat-option *ngFor="let modelo of modelos$ | async" [value]="modelo.id">
+                {{ modelo.nome }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div fxFlex="50" fxFlex.xs="100" class="form-container" formGroupName="group">
+          <mat-form-field>
+            <mat-select placeholder="Grupo" formControlName="uid">
+              <mat-option *ngFor="let group of groups$ | async" [value]="group.uid">
+                {{ group.nome }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div fxFlex="50" fxFlex.xs="100" class="form-container" formGroupName="parts">
+          <mat-form-field>
+            <mat-select placeholder="Peças" formControlName="uid">
+              <mat-option value="Porta">Porta</mat-option>
+              <mat-option value="Porta">Porta</mat-option>
+              <mat-option value="Porta">Porta</mat-option>
+              <mat-option value="Porta">Porta</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </form>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-raised-button (click)="reset()">Limpar</button>
+      <button mat-raised-button color="accent" (click)="save(productForm)">{{product?.uid ? 'Atualizar' : 'Salvar'}}</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<mat-card>
+
+  <mat-card-header>
+    <mat-card-subtitle>Listagem de produtos</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+
+    <!-- filter -->
+    <div fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutGap="10px grid">
+      <div fxFlex="30" fxFlex.xs="50" class="form-container">
+        <mat-form-field class="input-filter-table">
+          <input matInput (keyup)="filter($event.target.value)" placeholder="Pesquisar">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <!-- table -->
+    <table mat-table [dataSource]="productsTableSource" matSort>
+
+      <!-- header/row column -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      <!-- columns -->
+      <ng-container matColumnDef="uid">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Código </th>
+        <td mat-cell *matCellDef="let row"> {{row.uid}} </td>
+      </ng-container>
+      <ng-container matColumnDef="manufacturer">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fabricante </th>
+        <td mat-cell *matCellDef="let row"> {{row.manufacturer.id}} </td>
+      </ng-container>
+      <ng-container matColumnDef="brand">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fabricante </th>
+        <td mat-cell *matCellDef="let row"> {{row.brand.id}} </td>
+      </ng-container>
+      <ng-container matColumnDef="group">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fabricante </th>
+        <td mat-cell *matCellDef="let row"> {{row.group.uid}} </td>
+      </ng-container>
+      <ng-container matColumnDef="parts">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Peça </th>
+        <td mat-cell *matCellDef="let row"> {{row.parts.uid}} </td>
+      </ng-container>
+
+      <!-- actions buttons -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button>
+            <mat-icon (click)="edit(element)" matTooltip="Editar" matTooltipPosition="right">edit</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon (click)="delete(element)" matTooltip="Deletar" matTooltipPosition="right">delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    <!-- paginator -->
+  </mat-card-content>
+</mat-card>
