@@ -1,0 +1,13 @@
+[debug] [2018-09-24T16:41:37.751Z] ----------------------------------------------------------------------
+[debug] [2018-09-24T16:41:37.773Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Luiz\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2018-09-24T16:41:37.773Z] CLI Version:   4.0.2
+[debug] [2018-09-24T16:41:37.774Z] Platform:      win32
+[debug] [2018-09-24T16:41:37.774Z] Node Version:  v8.9.3
+[debug] [2018-09-24T16:41:37.779Z] Time:          Mon Sep 24 2018 13:41:37 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-09-24T16:41:37.779Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-24T16:41:37.818Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-24T16:41:37.821Z] > authorizing via signed-in user
+[debug] [2018-09-24T16:41:37.835Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/starter-withprod  
+  
+ Mon Sep 24 2018 13:41:37 GMT-0300 (Hora oficial do Brasil)
