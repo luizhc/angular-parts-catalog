@@ -33,7 +33,8 @@
     </mat-card-content>
     <mat-card-actions align="end">
       <button mat-raised-button (click)="reset()">Limpar</button>
-      <button mat-raised-button color="accent" (click)="save(form)" [disabled]="form.invalid">{{request?.uid ? 'Atualizar' : 'Salvar'}}</button>
+      <button mat-raised-button color="accent" (click)="save(form)" [disabled]="form.invalid">{{request?.uid ? 'Atualizar'
+        : 'Salvar'}}</button>
     </mat-card-actions>
   </mat-card>
 </div>
@@ -49,7 +50,7 @@
     <!-- filter -->
     <div fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutGap="10px grid">
       <div fxFlex="30" fxFlex.xs="50" class="form-container">
-        <mat-form-field class="input-filter-table">
+        <mat-form-field>
           <input matInput (keyup)="filter($event.target.value)" placeholder="Pesquisar">
         </mat-form-field>
       </div>

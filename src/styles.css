@@ -1732,6 +1732,7 @@ td.mat-cell:last-child, td.mat-footer-cell:last-child, th.mat-header-cell:last-c
 
 table {
   width: 100%;
+  table-layout:fixed;
 }
 
 .mat-form-field {
@@ -1758,4 +1759,12 @@ table {
   background-color: #ff4081 !important;
   color: #fff !important;
   margin-right: 10px;
+}
+
+table td, th {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
 }
