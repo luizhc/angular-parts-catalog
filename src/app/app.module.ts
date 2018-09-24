@@ -26,7 +26,7 @@ import { ChartCardModule } from './chart-card/chart-card.module';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { RequestModule } from './request/resquest.module';
+import { RequestModule } from './request/request.module';
 import { CustomDialogComponent } from './custom-dialog/custom-dialog.component';
 import { AngularFireAuth } from 'angularfire2/auth';
 

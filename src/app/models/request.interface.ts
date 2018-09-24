@@ -1,6 +1,10 @@
-import { Product } from './product.interface';
-
 export interface Request {
-    product: Product;
-
+    uid: string;
+    quantity: number;
+    total: number;
+    product: {
+        name: string;
+        unitary: number;
+    };
+    createdAt: string;
 }

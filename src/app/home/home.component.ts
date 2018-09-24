@@ -10,10 +10,31 @@ import { ProductService } from '../services/product.service';
 })
 export class HomeComponent implements OnInit {
   product: Product;
+  displayedColumns = ['uid', 'manufacturer', 'brand', 'group', 'parts', 'unitary', 'actions'];
   productsTableSource = new MatTableDataSource<Product>();
-  displayedColumns: string[] = ['uid', 'manufacturer', 'brand', 'group', 'parts', 'unitary', 'actions'];
 
-  constructor(private _productsService: ProductService) { }
+  constructor(private _productsService: ProductService) {
+    // function to filter inside nested object
+    this.productsTableSource.filterPredicate = (order, filter: string) => {
+      const transformedFilter = filter.trim().toLowerCase();
+
+      const listAsFlatString = (obj): string => {
+        let returnVal = '';
+
+        Object.values(obj).forEach((val) => {
+          if (typeof val !== 'object') {
+            returnVal = returnVal + ' ' + val;
+          } else if (val !== null) {
+            returnVal = returnVal + ' ' + listAsFlatString(val);
+          }
+        });
+
+        return returnVal.trim().toLowerCase();
+      };
+
+      return listAsFlatString(order).includes(transformedFilter);
+    };
+  }
 
   ngOnInit() {
     this._productsService.getData().subscribe(data => {
@@ -28,7 +49,7 @@ export class HomeComponent implements OnInit {
   onShopping(obj) {
   }
 
-  filter(value: string) {
-    this.productsTableSource.filter = value.trim().toLowerCase();
+  filter(filterValue: string) {
+    this.productsTableSource.filter = filterValue;
   }
 }
