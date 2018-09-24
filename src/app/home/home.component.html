@@ -9,7 +9,7 @@
   <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
     <mat-card class="card-picture">
       <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
-        <span fxFlex="90%">{{product.parts.name }}  - {{ product.unitary | currency:'BRL': 'symbol' }}</span>
+        <span fxFlex="90%">{{product.parts.name }} - {{ product.unitary | currency:'BRL': 'symbol' }}</span>
         <button fxFlex="10%" mat-icon-button [routerLink]="['/request/' + product.uid]">
           <mat-icon (click)="onShopping(product)" matTooltip="Realizar pedido" matTooltipPosition="right">add_shopping_cart</mat-icon>
         </button>
@@ -34,9 +34,9 @@
 
         <!-- filter -->
         <div fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutGap="10px grid">
-          <div fxFlex="30" fxFlex.xs="50" class="form-container">
-            <mat-form-field class="input-filter-table">
-              <input matInput (keyup)="filter($event.target.value)" placeholder="Pesquisar por qualquer coluna">
+          <div fxFlex="30" fxFlex.xs="100" class="form-container">
+            <mat-form-field>
+              <input matInput (keyup)="filter($event.target.value)" placeholder="Pesquisar por qualquer coluna" type="text">
             </mat-form-field>
           </div>
         </div>

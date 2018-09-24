@@ -35,9 +35,9 @@
 
     <!-- filter -->
     <div fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutGap="10px grid">
-      <div fxFlex="30" fxFlex.xs="50" class="form-container">
-        <mat-form-field class="input-filter-table">
-          <input matInput (keyup)="filter($event.target.value)" placeholder="Pesquisar..">
+      <div fxFlex="30" fxFlex.xs="100" class="form-container">
+        <mat-form-field>
+          <input matInput (keyup)="filter($event.target.value)" placeholder="Pesquisar por qualquer coluna" type="text">
         </mat-form-field>
       </div>
     </div>
