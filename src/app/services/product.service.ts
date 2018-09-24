@@ -32,8 +32,8 @@ export class ProductService {
     );
   }
 
-  getPart(uid: string) {
-    return this.afs.doc<any>(`products/${uid}`);
+  getProductById(uid: string) {
+    return this.afs.doc<Product>(`products/${uid}`);
   }
 
   getGroups(): Observable<Group[]> {
@@ -49,10 +49,10 @@ export class ProductService {
   }
 
   updateProduct(uid: string, data: any) {
-    return this.getPart(uid).update(data);
+    return this.getProductById(uid).update(data);
   }
 
   deleteProduct(uid: string) {
-    return this.getPart(uid).delete();
+    return this.getProductById(uid).delete();
   }
 }

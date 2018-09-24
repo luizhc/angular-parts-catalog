@@ -27,6 +27,8 @@ import { ChartCardModule } from './chart-card/chart-card.module';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { RequestModule } from './request/resquest.module';
+import { CustomDialogComponent } from './custom-dialog/custom-dialog.component';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 export const firebaseConfig = environment.firebaseConfig;
 
@@ -35,7 +37,8 @@ export const firebaseConfig = environment.firebaseConfig;
     AppComponent,
     NotFoundComponent,
     MenuComponent,
-    HomeComponent
+    HomeComponent,
+    CustomDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,8 @@ export const firebaseConfig = environment.firebaseConfig;
     AngularFireModule.initializeApp(firebaseConfig),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [AuthService, AuthGuard],
-  bootstrap: [AppComponent]
+  providers: [AuthService, AuthGuard, AngularFireAuth],
+  bootstrap: [AppComponent],
+  entryComponents: [CustomDialogComponent]
 })
 export class AppModule { }

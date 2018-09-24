@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Realizar Login</h2>
+
+<mat-dialog-content [formGroup]="form">
+  <mat-form-field>
+    <input matInput placeholder="E-mail" formControlName="email" email>
+  </mat-form-field>
+  <mat-form-field>
+      <input matInput placeholder="Senha" formControlName="password" type="password">
+    </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button class="mat-raised-button" (click)="close()">
+    Fechar
+  </button>
+  <button class="mat-raised-button mat-primary" (click)="login()" [disabled]="form.invalid">
+    Login
+  </button>
+</mat-dialog-actions>
