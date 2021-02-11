@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "catalogo-pecas": {
+    "angular-parts-catalog": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/catalogo-pecas",
+            "outputPath": "dist/angular-parts-catalog",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -51,18 +51,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "catalogo-pecas:build"
+            "browserTarget": "angular-parts-catalog:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "catalogo-pecas:build:production"
+              "browserTarget": "angular-parts-catalog:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "catalogo-pecas:build"
+            "browserTarget": "angular-parts-catalog:build"
           }
         },
         "test": {
@@ -96,7 +96,7 @@
         }
       }
     },
-    "catalogo-pecas-e2e": {
+    "angular-parts-catalog-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -104,7 +104,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "catalogo-pecas:serve"
+            "devServerTarget": "angular-parts-catalog:serve"
           }
         },
         "lint": {
@@ -119,5 +119,5 @@
       }
     }
   },
-  "defaultProject": "catalogo-pecas"
+  "defaultProject": "angular-parts-catalog"
 }
